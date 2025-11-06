@@ -34,24 +34,35 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-gold text-center animate-slide-up">
-          Frequently Asked Questions
-        </h2>
+    <section className="py-20 px-4 bg-navy-dark relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        <div className="absolute w-72 h-72 bg-accent/15 rounded-full blur-3xl top-10 right-20 animate-float"></div>
+        <div className="absolute w-72 h-72 bg-accent/10 rounded-full blur-3xl bottom-10 left-20 animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center mb-16 animate-slide-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-gold">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-accent/80">
+            Everything you need to know about CONTRIVE'25
+          </p>
+        </div>
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="gradient-card border border-accent/20 rounded-xl px-6 hover:border-accent/50 transition-all duration-300 hover:glow-card animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="gradient-card border-2 border-accent/20 rounded-2xl px-8 hover:border-accent/60 transition-all duration-300 hover:glow-card animate-slide-up shadow-card data-[state=open]:border-accent/70 data-[state=open]:glow-gold"
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <AccordionTrigger className="text-left text-lg font-semibold text-accent hover:text-accent/80 hover:no-underline py-6">
+              <AccordionTrigger className="text-left text-lg md:text-xl font-bold text-accent hover:text-accent/90 hover:no-underline py-6 gap-4">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-foreground/80 pb-6 leading-relaxed">
+              <AccordionContent className="text-foreground/85 pb-6 pt-2 leading-relaxed text-base">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

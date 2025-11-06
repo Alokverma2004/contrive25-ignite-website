@@ -12,30 +12,37 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="animate-slide-up">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 gradient-gold tracking-tight">
+      <div className="relative z-10 container mx-auto px-4">
+        <div className="animate-slide-up max-w-5xl mx-auto">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-12 gradient-gold tracking-tight text-center">
             CONTRIVE'25
           </h1>
           
-          <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-accent mb-8 max-w-4xl mx-auto leading-relaxed">
-            "Got an innovative idea bubbling in your mind? We'll give you the stage, the spotlight, and the chance to shine like never before."
-          </p>
+          <div className="gradient-card rounded-3xl p-8 md:p-12 border-2 border-accent/30 glow-card mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-accent text-center">
+              About CONTRIVE'25
+            </h2>
+            
+            <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">
+              CONTRIVE'25 is the flagship innovation initiative by SCIEnT, the Technical Society of NIT Trichy. It is a platform designed to transform ideas into reality, where students from diverse disciplines come together to innovate, collaborate, and create solutions that address real-world challenges. This year marks another exciting chapter in our journey to foster a culture of creativity and entrepreneurship on campus.
+            </p>
+            
+            <p className="text-base md:text-lg text-foreground/90 leading-relaxed text-justify">
+              At CONTRIVE'25, we believe that every great innovation begins with a simple idea. Whether you're an engineer, designer, scientist, or creative thinker, this is your stage to showcase your potential. With mentorship from industry experts, access to cutting-edge resources, and opportunities to win exciting prizes and recognition, CONTRIVE'25 is more than just a competition—it's a launchpad for your innovative journey. Join us to turn your vision into impact and be a part of the next wave of changemakers.
+            </p>
+          </div>
           
-          <p className="text-base md:text-lg text-foreground/80 mb-6 max-w-3xl mx-auto leading-relaxed">
-            CONTRIVE'25 is SCIEnT's annual innovation initiative — designed to ignite creativity and bring groundbreaking ideas to life. Whether you're a dreamer, thinker, or builder, this is your chance to turn imagination into impact.
-          </p>
-          
-          <p className="text-sm md:text-base text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Transform your raw concepts into impactful solutions with access to mentors, resources, and a platform that celebrates your brilliance.
-          </p>
-          
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-primary-foreground font-bold text-lg px-8 py-6 rounded-full glow-gold transition-all duration-300 hover:scale-105"
-          >
-            Register Now <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <div className="text-center">
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-primary-foreground font-bold text-lg px-10 py-7 rounded-full glow-gold transition-all duration-300 hover:scale-110"
+            >
+              <a href="/register">
+                Register Now <ArrowRight className="ml-2 h-6 w-6" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
 
