@@ -68,46 +68,66 @@ const Timeline = () => {
 
       <div className="container mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-gold text-center animate-slide-up">
-          The CONTRIVE Journey
+          Timeline
         </h2>
         <p className="text-center text-accent/80 mb-20 text-lg">
           From idea to innovation — track your progress through each phase
         </p>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Vertical timeline line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full"></div>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Curvy center timeline line - using SVG for smooth curves */}
+          <svg 
+            className="absolute left-1/2 top-0 h-full w-full -translate-x-1/2 pointer-events-none hidden md:block" 
+            style={{ maxWidth: '100%' }}
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0" />
+                <stop offset="50%" stopColor="hsl(var(--accent))" stopOpacity="1" />
+                <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            {/* Curvy path connecting all timeline items */}
+            <path
+              d="M 50% 0 Q 55% 11%, 50% 11% Q 45% 22%, 50% 22% Q 55% 33%, 50% 33% Q 45% 44%, 50% 44% Q 55% 55%, 50% 55% Q 45% 66%, 50% 66% Q 55% 77%, 50% 77% Q 45% 88%, 50% 88% Q 55% 100%, 50% 100%"
+              stroke="url(#timelineGradient)"
+              strokeWidth="3"
+              fill="none"
+              className="drop-shadow-[0_0_8px_hsl(var(--accent)/0.6)]"
+            />
+          </svg>
 
-          {/* Timeline stages */}
-          <div className="space-y-8">
+          {/* Mobile vertical line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full md:hidden -translate-x-1/2"></div>
+
+          {/* Timeline stages - alternating left and right */}
+          <div className="space-y-16 md:space-y-24">
             {stages.map((stage, index) => {
               const Icon = stage.icon;
+              const isLeft = index % 2 === 0;
               
               return (
                 <div
                   key={index}
-                  className="relative flex items-start gap-6 md:gap-8 animate-slide-up group"
+                  className={`relative flex items-center animate-slide-up ${
+                    isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                  } flex-col`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Icon container - on the line */}
-                  <div className="relative z-10 flex-shrink-0">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 border-4 border-accent flex items-center justify-center glow-gold group-hover:scale-110 transition-all duration-300 shadow-card">
-                      <Icon className="w-6 h-6 md:w-8 md:h-8 text-accent" />
-                    </div>
-                    {/* Connector dot */}
-                    <div className="absolute top-1/2 -left-[11px] md:-left-[15px] w-2 h-2 bg-accent rounded-full -translate-y-1/2"></div>
-                  </div>
-
-                  {/* Content card */}
-                  <div className="flex-1 pb-2">
-                    <div className="gradient-card rounded-2xl p-6 md:p-8 border-2 border-accent/30 hover:border-accent/60 transition-all duration-300 hover:glow-card hover:scale-[1.02] shadow-card">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-                        <h3 className="text-xl md:text-2xl font-bold text-accent">
-                          {stage.title}
-                        </h3>
-                        <div className="flex items-center gap-2">
-                          <div className="px-4 py-2 rounded-full bg-accent/20 border border-accent/40">
-                            <span className="text-sm md:text-base font-black text-accent">{stage.date}</span>
+                  {/* Content card - takes half width on desktop */}
+                  <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12' : 'md:pl-12'} mb-8 md:mb-0`}>
+                    <div className="gradient-card rounded-2xl p-6 md:p-8 border-2 border-accent/30 hover:border-accent/60 transition-all duration-300 hover:glow-card hover:scale-105 shadow-card group">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 border-2 border-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                          <Icon className="w-6 h-6 text-accent" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl md:text-2xl font-bold text-accent mb-2">
+                            {stage.title}
+                          </h3>
+                          <div className="inline-flex px-4 py-1.5 rounded-full bg-accent/20 border border-accent/40 mb-3">
+                            <span className="text-sm font-black text-accent">{stage.date}</span>
                           </div>
                         </div>
                       </div>
@@ -116,6 +136,14 @@ const Timeline = () => {
                       </p>
                     </div>
                   </div>
+
+                  {/* Center icon/connector */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-20">
+                    <div className="w-6 h-6 rounded-full bg-accent border-4 border-background shadow-[0_0_20px_hsl(var(--accent)/0.6)] animate-pulse-glow"></div>
+                  </div>
+
+                  {/* Empty space for alternating layout */}
+                  <div className="hidden md:block md:w-5/12"></div>
                 </div>
               );
             })}

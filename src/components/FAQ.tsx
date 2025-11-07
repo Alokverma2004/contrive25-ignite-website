@@ -34,35 +34,34 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 px-4 bg-navy-dark relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-b from-background to-background/80 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute w-72 h-72 bg-accent/15 rounded-full blur-3xl top-10 right-20 animate-float"></div>
-        <div className="absolute w-72 h-72 bg-accent/10 rounded-full blur-3xl bottom-10 left-20 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute w-80 h-80 bg-accent/10 rounded-full blur-3xl top-20 left-20 animate-float"></div>
+        <div className="absolute w-80 h-80 bg-accent/10 rounded-full blur-3xl bottom-20 right-20 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto relative z-10 max-w-4xl">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-gold">
+          <h2 className="text-4xl md:text-5xl font-bold gradient-gold mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-accent/80">
+          <p className="text-lg text-accent/90 font-medium">
             Everything you need to know about CONTRIVE'25
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-6">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="gradient-card border-2 border-accent/20 rounded-2xl px-8 hover:border-accent/60 transition-all duration-300 hover:glow-card animate-slide-up shadow-card data-[state=open]:border-accent/70 data-[state=open]:glow-gold"
-              style={{ animationDelay: `${index * 0.08}s` }}
+              className="gradient-card rounded-2xl border-2 border-accent/40 hover:border-accent/70 transition-all duration-300 px-6 shadow-card data-[state=open]:glow-card data-[state=open]:border-accent/80 backdrop-blur-sm overflow-hidden"
             >
-              <AccordionTrigger className="text-left text-lg md:text-xl font-bold text-accent hover:text-accent/90 hover:no-underline py-6 gap-4">
+              <AccordionTrigger className="text-left text-lg md:text-xl font-bold text-accent hover:text-accent/90 py-6 hover:no-underline transition-colors">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-foreground/85 pb-6 pt-2 leading-relaxed text-base">
+              <AccordionContent className="text-base text-foreground/85 pb-6 leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -1,81 +1,75 @@
-import { Button } from "@/components/ui/button";
 import { Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative bg-background border-t-2 border-accent/30 pt-16 pb-10 px-4">
+    <footer className="relative bg-gradient-to-b from-background via-background/90 to-background border-t-2 border-accent/30 py-16 px-4 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute w-96 h-96 bg-accent/20 rounded-full blur-3xl top-0 left-1/4 -translate-y-1/2"></div>
-        <div className="absolute w-96 h-96 bg-accent/15 rounded-full blur-3xl top-0 right-1/4 -translate-y-1/2"></div>
+        <div className="absolute w-96 h-96 bg-accent/20 rounded-full blur-3xl -bottom-48 -left-48 animate-float"></div>
+        <div className="absolute w-96 h-96 bg-accent/20 rounded-full blur-3xl -bottom-48 -right-48 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Scroll to top button */}
-      <Button
-        onClick={scrollToTop}
-        size="icon"
-        className="fixed bottom-8 right-8 w-14 h-14 bg-accent hover:bg-accent/90 text-primary-foreground rounded-full glow-gold z-50 hover:scale-125 transition-all duration-300 shadow-card"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="h-6 w-6" />
-      </Button>
+      {/* Decorative top border glow */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent shadow-[0_0_10px_hsl(var(--accent)/0.5)]"></div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
-          {/* Logo/Title */}
-          <div className="space-y-3">
-            <h3 className="text-4xl md:text-5xl font-black gradient-gold mb-3">
-              CONTRIVE'25
-            </h3>
-            <p className="text-base text-accent/90 font-semibold">
-              Powered by SCIEnT NIT Trichy
-            </p>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Empowering innovation, fostering creativity, and building the future one idea at a time.
-            </p>
+          {/* Logo/Brand */}
+          <div className="animate-slide-up">
+            <h3 className="text-4xl font-black gradient-gold mb-2">SCIEnT</h3>
+            <p className="text-base text-muted-foreground font-medium">Innovation Hub of NIT Trichy</p>
           </div>
 
-          {/* Social links */}
-          <div className="flex gap-6">
+          {/* Social Links */}
+          <div className="flex gap-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/scient-nitt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-14 h-14 rounded-full gradient-card border-2 border-accent/30 flex items-center justify-center hover:border-accent/70 hover:glow-card transition-all duration-300 hover:scale-125 shadow-card group"
+              className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/40 to-accent/20 border-2 border-accent flex items-center justify-center hover:scale-110 hover:rotate-6 hover:glow-gold transition-all duration-300 shadow-lg"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+              <Linkedin className="w-7 h-7 text-accent" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/scient_nitt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-14 h-14 rounded-full gradient-card border-2 border-accent/30 flex items-center justify-center hover:border-accent/70 hover:glow-card transition-all duration-300 hover:scale-125 shadow-card group"
+              className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/40 to-accent/20 border-2 border-accent flex items-center justify-center hover:scale-110 hover:rotate-6 hover:glow-gold transition-all duration-300 shadow-lg"
               aria-label="Instagram"
             >
-              <Instagram className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+              <Instagram className="w-7 h-7 text-accent" />
             </a>
             <a
-              href="mailto:contact@scient.com"
-              className="w-14 h-14 rounded-full gradient-card border-2 border-accent/30 flex items-center justify-center hover:border-accent/70 hover:glow-card transition-all duration-300 hover:scale-125 shadow-card group"
+              href="mailto:scient@nitt.edu"
+              className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/40 to-accent/20 border-2 border-accent flex items-center justify-center hover:scale-110 hover:rotate-6 hover:glow-gold transition-all duration-300 shadow-lg"
               aria-label="Email"
             >
-              <Mail className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+              <Mail className="w-7 h-7 text-accent" />
             </a>
           </div>
 
           {/* Copyright */}
-          <div className="pt-8 border-t-2 border-accent/20 w-full">
-            <p className="text-sm md:text-base text-muted-foreground font-medium">
+          <div className="animate-slide-up pt-4" style={{ animationDelay: '0.2s' }}>
+            <p className="text-sm text-muted-foreground font-medium">
               © 2025 SCIEnT NIT Trichy | All Rights Reserved
             </p>
           </div>
         </div>
       </div>
+
+      {/* Scroll to top button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-gradient-to-br from-accent/50 to-accent/30 border-2 border-accent flex items-center justify-center hover:scale-110 hover:rotate-12 glow-gold transition-all duration-300 shadow-xl z-40 backdrop-blur-sm"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-7 h-7 text-accent" />
+      </button>
     </footer>
   );
 };

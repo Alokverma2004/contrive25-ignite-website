@@ -32,7 +32,7 @@ const Sponsors = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12 animate-slide-up">
           <p className="text-sm md:text-base uppercase tracking-widest text-muted-foreground mb-3 font-bold">
-            Powered by SCIEnT
+            Powered by SCIEnT and Designers' Consortium
           </p>
           <h2 className="text-4xl md:text-5xl font-bold gradient-gold mb-4">
             Our Sponsors & Partners
@@ -42,27 +42,29 @@ const Sponsors = () => {
           </p>
         </div>
 
-        {/* Sponsor grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {sponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="gradient-card rounded-3xl border-2 border-accent/30 p-8 flex flex-col items-center justify-center hover:border-accent/60 hover:glow-card hover:scale-105 transition-all duration-300 shadow-card group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-full h-32 flex items-center justify-center mb-6 grayscale group-hover:grayscale-0 transition-all duration-300">
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="max-w-full max-h-full object-contain"
-                />
+        {/* Sponsor carousel - auto-sliding */}
+        <div className="relative max-w-5xl mx-auto overflow-hidden">
+          <div className="flex gap-8 animate-slide-sponsors">
+            {/* Duplicate sponsors for seamless loop */}
+            {[...sponsors, ...sponsors].map((sponsor, index) => (
+              <div
+                key={index}
+                className="gradient-card rounded-3xl border-2 border-accent/30 p-8 flex flex-col items-center justify-center hover:border-accent/60 hover:glow-card hover:scale-105 transition-all duration-300 shadow-card group flex-shrink-0 w-80"
+              >
+                <div className="w-full h-32 flex items-center justify-center mb-6 grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-xl font-bold text-accent mb-2">{sponsor.name}</h3>
+                  <p className="text-sm text-muted-foreground font-medium">{sponsor.role}</p>
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-accent mb-2">{sponsor.name}</h3>
-                <p className="text-sm text-muted-foreground font-medium">{sponsor.role}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

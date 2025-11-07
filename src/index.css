@@ -151,3 +151,21 @@ All colors MUST be HSL.
 .animate-fade-in {
   animation: fade-in 1s ease-out;
 }
+
+/* Sponsor carousel sliding animation */
+@keyframes slide-sponsors {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-sponsors {
+  animation: slide-sponsors 20s linear infinite;
+}
+
+.animate-slide-sponsors:hover {
+  animation-play-state: paused;
+}

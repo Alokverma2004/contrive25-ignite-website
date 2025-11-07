@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import collabImage from "@/assets/contrive-collab.jpg";
+import designImage from "@/assets/contrive-design.jpg";
+import prototypeImage from "@/assets/contrive-prototype.jpg";
+import testingImage from "@/assets/contrive-testing.jpg";
+import showcaseImage from "@/assets/contrive-showcase.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero py-20">
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl top-20 left-10 animate-float"></div>
@@ -24,32 +27,60 @@ const Hero = () => {
             </h2>
             
             <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">
-              CONTRIVE'25 is the flagship innovation initiative by SCIEnT, the Technical Society of NIT Trichy. It is a platform designed to transform ideas into reality, where students from diverse disciplines come together to innovate, collaborate, and create solutions that address real-world challenges. This year marks another exciting chapter in our journey to foster a culture of creativity and entrepreneurship on campus.
+              <span className="font-bold italic text-accent">Contrive</span> is the flagship product development program jointly conducted by SCIEnT – the Innovation Hub of NIT Trichy and Designers' Consortium – the Technical Product Design and Innovation Club of NIT Trichy.
+            </p>
+            
+            <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">
+              The program is crafted to ignite innovation and cultivate technical excellence among aspiring engineers. Participants engage with real-world problem statements that push the boundaries of creativity, analytical thinking, and engineering insight.
+            </p>
+            
+            <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">
+              Through the guidance of experienced mentors and collaboration with industry professionals, students navigate every stage of product development — from ideation and conceptualization to prototyping and validation. The initiative emphasizes not just technical mastery, but also teamwork, communication, and project management, ensuring a well-rounded learning experience.
             </p>
             
             <p className="text-base md:text-lg text-foreground/90 leading-relaxed text-justify">
-              At CONTRIVE'25, we believe that every great innovation begins with a simple idea. Whether you're an engineer, designer, scientist, or creative thinker, this is your stage to showcase your potential. With mentorship from industry experts, access to cutting-edge resources, and opportunities to win exciting prizes and recognition, CONTRIVE'25 is more than just a competition—it's a launchpad for your innovative journey. Join us to turn your vision into impact and be a part of the next wave of changemakers.
+              Over several weeks, Contrive transforms participants into capable innovators who bridge the gap between theory and practice, emerging with hands-on experience, a deep understanding of the innovation pipeline, and the confidence to tackle real-world engineering challenges.
             </p>
           </div>
-          
-          <div className="text-center">
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-primary-foreground font-bold text-lg px-10 py-7 rounded-full glow-gold transition-all duration-300 hover:scale-110"
-            >
-              <a href="/register">
-                Register Now <ArrowRight className="ml-2 h-6 w-6" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-accent rounded-full animate-pulse"></div>
+          {/* Image Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="col-span-2 md:col-span-2 gradient-card rounded-2xl overflow-hidden border-2 border-accent/30 hover:border-accent/60 hover:glow-card transition-all duration-300 group">
+              <img 
+                src={collabImage} 
+                alt="Team collaboration at CONTRIVE" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="gradient-card rounded-2xl overflow-hidden border-2 border-accent/30 hover:border-accent/60 hover:glow-card transition-all duration-300 group">
+              <img 
+                src={designImage} 
+                alt="CAD Design and Simulation" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="gradient-card rounded-2xl overflow-hidden border-2 border-accent/30 hover:border-accent/60 hover:glow-card transition-all duration-300 group">
+              <img 
+                src={prototypeImage} 
+                alt="3D Printing and Prototyping" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="gradient-card rounded-2xl overflow-hidden border-2 border-accent/30 hover:border-accent/60 hover:glow-card transition-all duration-300 group">
+              <img 
+                src={testingImage} 
+                alt="Testing and Validation" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="gradient-card rounded-2xl overflow-hidden border-2 border-accent/30 hover:border-accent/60 hover:glow-card transition-all duration-300 group">
+              <img 
+                src={showcaseImage} 
+                alt="Final Showcase Event" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
