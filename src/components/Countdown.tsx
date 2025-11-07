@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Clock } from "lucide-react";
 
 const Countdown = () => {
   const targetDate = new Date("2024-11-19T23:59:59").getTime();
@@ -29,56 +28,44 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
-    <section className="py-20 px-4 bg-navy-dark relative overflow-hidden">
-      {/* Background animations */}
-      <div className="absolute inset-0 overflow-hidden opacity-25">
-        <div className="absolute w-96 h-96 bg-accent/20 rounded-full blur-3xl top-10 left-20 animate-float"></div>
-        <div className="absolute w-96 h-96 bg-accent/15 rounded-full blur-3xl bottom-10 right-20 animate-float" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute w-64 h-64 bg-accent/10 rounded-full blur-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-glow"></div>
-      </div>
-
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="text-center animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-gold">
-            Countdown to Deadline
-          </h2>
-          <p className="text-lg md:text-xl text-accent/90 mb-12">
-            Registration closes on <span className="font-bold text-accent">November 19, 2024</span>
-          </p>
-
-          {/* Countdown timer */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12">
-            {Object.entries(timeLeft).map(([unit, value]) => (
-              <div
-                key={unit}
-                className="gradient-card rounded-2xl p-8 md:p-10 border-2 border-accent/30 glow-card hover:scale-110 transition-all duration-300 shadow-card group"
-              >
-                <div className="text-5xl md:text-7xl font-black text-accent mb-3 animate-pulse-glow group-hover:scale-110 transition-transform">
-                  {value.toString().padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base uppercase tracking-widest text-foreground/80 font-bold">
-                  {unit}
-                </div>
-              </div>
-            ))}
+    <div className="fixed bottom-8 right-8 z-50 animate-slide-up">
+      <div className="gradient-card rounded-3xl p-6 border-2 border-accent/40 glow-card shadow-2xl backdrop-blur-sm max-w-xs">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+            <Clock className="w-5 h-5 text-accent animate-pulse-glow" />
           </div>
-
-          <p className="text-xl md:text-2xl font-bold text-accent mb-10 animate-pulse-glow">
-            Don't miss out — Be ready to spark innovation!
-          </p>
-
-          <Button 
-            asChild
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-primary-foreground font-bold text-lg px-10 py-7 rounded-full glow-gold transition-all duration-300 hover:scale-110"
-          >
-            <a href="/register">
-              Register Now <ArrowRight className="ml-2 h-6 w-6" />
-            </a>
-          </Button>
+          <div>
+            <h3 className="text-sm font-bold text-accent uppercase tracking-wider">
+              Registration Ends
+            </h3>
+            <p className="text-xs text-muted-foreground">Nov 19, 2024</p>
+          </div>
         </div>
+
+        {/* Countdown timer */}
+        <div className="grid grid-cols-4 gap-2 mb-4">
+          {Object.entries(timeLeft).map(([unit, value]) => (
+            <div
+              key={unit}
+              className="text-center"
+            >
+              <div className="text-2xl font-black text-accent mb-1 animate-pulse-glow">
+                {value.toString().padStart(2, "0")}
+              </div>
+              <div className="text-[10px] uppercase tracking-wider text-foreground/60 font-medium">
+                {unit}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Message */}
+        <p className="text-xs text-center text-accent/90 font-semibold">
+          Don't miss out!
+        </p>
       </div>
-    </section>
+    </div>
   );
 };
 

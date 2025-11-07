@@ -1,10 +1,23 @@
+import solidworksLogo from "@/assets/solidworks-logo.png";
+import ansysLogo from "@/assets/ansys-logo.png";
+import mathworksLogo from "@/assets/mathworks-logo.png";
+
 const sponsors = [
-  "Sponsor 1",
-  "Sponsor 2",
-  "Sponsor 3",
-  "Sponsor 4",
-  "Sponsor 5",
-  "Sponsor 6",
+  {
+    name: "SolidWorks",
+    role: "Design Partner",
+    logo: solidworksLogo,
+  },
+  {
+    name: "Ansys",
+    role: "Engineering Simulation Partner",
+    logo: ansysLogo,
+  },
+  {
+    name: "MathWorks",
+    role: "System Modelling Partner",
+    logo: mathworksLogo,
+  },
 ];
 
 const Sponsors = () => {
@@ -29,45 +42,29 @@ const Sponsors = () => {
           </p>
         </div>
 
-        {/* Scrolling sponsor carousel */}
-        <div className="relative">
-          <div className="flex gap-8 md:gap-12 overflow-hidden py-8">
-            <div className="flex gap-8 md:gap-12 animate-marquee">
-              {[...sponsors, ...sponsors].map((sponsor, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-52 h-28 gradient-card rounded-2xl border-2 border-accent/20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:border-accent/60 hover:glow-card hover:scale-110 shadow-card"
-                >
-                  <span className="text-foreground/60 font-bold text-lg hover:text-accent transition-colors">
-                    {sponsor}
-                  </span>
-                </div>
-              ))}
+        {/* Sponsor grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {sponsors.map((sponsor, index) => (
+            <div
+              key={index}
+              className="gradient-card rounded-3xl border-2 border-accent/30 p-8 flex flex-col items-center justify-center hover:border-accent/60 hover:glow-card hover:scale-105 transition-all duration-300 shadow-card group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-full h-32 flex items-center justify-center mb-6 grayscale group-hover:grayscale-0 transition-all duration-300">
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-accent mb-2">{sponsor.name}</h3>
+                <p className="text-sm text-muted-foreground font-medium">{sponsor.role}</p>
+              </div>
             </div>
-          </div>
-          
-          {/* Gradient overlays for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
+          ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };

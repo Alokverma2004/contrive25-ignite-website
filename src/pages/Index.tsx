@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import InnovationJourney from "@/components/InnovationJourney";
 import Benefits from "@/components/Benefits";
 import Timeline from "@/components/Timeline";
 import Countdown from "@/components/Countdown";
@@ -11,13 +10,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
-      <InnovationJourney />
       <Benefits />
       <Timeline />
-      <Countdown />
       <Sponsors />
       <FAQ />
       <Footer />
+      <Countdown />
     </div>
   );
 };
