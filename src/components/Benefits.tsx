@@ -1,30 +1,40 @@
-import { Brain, Briefcase, Trophy, Gift, Star } from "lucide-react";
+import { Brain, Briefcase, Trophy, Gift, Star, Shield, Building2 } from "lucide-react";
 
 const benefits = [
   {
     icon: Brain,
-    title: "Mentorship",
-    description: "Get direct guidance from top faculty and experienced alumni mentors.",
+    title: "Mentorship and Guidance",
+    description: "Participants receive direct guidance from accomplished members of the innovative community here at NITT.",
+  },
+  {
+    icon: Building2,
+    title: "Opportunity to be Industrial Innovators",
+    description: "Contrive provides participants with the unique opportunity to work on industrially relevant problem statements. Exceptional teams stand a chance to become the inventors of projects that can be implemented in collaboration with industry partners.",
   },
   {
     icon: Briefcase,
-    title: "Pre-Placement Offers (PPI)",
-    description: "Exceptional teams stand a chance to earn PPIs from reputed companies.",
+    title: "Pre-Placement Interviews (PPI)",
+    description: "Outstanding performance and innovation may open doors to pre-placement interviews or offers from reputed companies.",
   },
   {
     icon: Trophy,
-    title: "Exciting Prizes",
-    description: "Attractive cash rewards, certificates, and trophies for top innovations.",
+    title: "Exciting Cash Prizes",
+    description: "Top-performing teams will be awarded attractive cash prizes, certificates, and trophies in recognition of their innovative and impactful solutions.",
+  },
+  {
+    icon: Shield,
+    title: "Intellectual Property (IP) Support",
+    description: "To encourage innovation and ownership, participants will receive complete intellectual property support. Teams with patentable ideas will be guided through the IP process.",
   },
   {
     icon: Gift,
     title: "Exclusive Merchandise",
-    description: "Participants receive limited-edition CONTRIVE'25 merchandise.",
+    description: "Every participant will receive limited-edition Contrive 2025 merchandise as a token of participation and innovation.",
   },
   {
     icon: Star,
-    title: "Exposure & Recognition",
-    description: "Showcase your project to industry experts and the NIT Trichy innovation ecosystem.",
+    title: "Exposure and Recognition",
+    description: "Participants will have the opportunity to present their projects to industry experts, faculty evaluators, and members of the NIT Trichy innovation ecosystem.",
   },
 ];
 
@@ -37,7 +47,7 @@ const Benefits = () => {
         <div className="absolute w-80 h-80 bg-accent/10 rounded-full blur-3xl bottom-10 left-10 animate-float" style={{ animationDelay: '3s' }}></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="px-4 md:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold gradient-gold mb-4">
             Benefits of Participating
@@ -47,7 +57,7 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (

@@ -29,7 +29,7 @@ const Sponsors = () => {
         <div className="absolute w-80 h-80 bg-accent/10 rounded-full blur-3xl top-1/2 right-10 -translate-y-1/2 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="px-4 md:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-12 animate-slide-up">
           <p className="text-sm md:text-base uppercase tracking-widest text-muted-foreground mb-3 font-bold">
             Powered by SCIEnT and Designers' Consortium

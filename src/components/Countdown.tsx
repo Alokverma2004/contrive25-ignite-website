@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Clock } from "lucide-react";
 
 const Countdown = () => {
-  const targetDate = new Date("2024-11-19T23:59:59").getTime();
+  const targetDate = new Date("2025-11-19T23:59:59").getTime();
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -39,7 +39,7 @@ const Countdown = () => {
             <h3 className="text-sm font-bold text-accent uppercase tracking-wider">
               Registration Ends
             </h3>
-            <p className="text-xs text-muted-foreground">Nov 19, 2024</p>
+            <p className="text-xs text-muted-foreground">Nov 19, 2025</p>
           </div>
         </div>
 

@@ -15,7 +15,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 px-4 md:px-8 lg:px-12 w-full">
         <div className="animate-slide-up max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-12 gradient-gold tracking-tight text-center">
             CONTRIVE'25
@@ -27,7 +27,7 @@ const Hero = () => {
             </h2>
             
             <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">
-              <span className="font-bold italic text-accent">Contrive</span> is the flagship product development program jointly conducted by SCIEnT – the Innovation Hub of NIT Trichy and Designers' Consortium – the Technical Product Design and Innovation Club of NIT Trichy.
+              <span className="font-bold italic text-accent">Contrive</span> is the flagship product development program jointly conducted by <span className="font-semibold text-accent">SCIEnT – the Innovation Hub of NIT Trichy</span> and <span className="font-semibold text-accent">Designers' Consortium – the Technical Product Design and Innovation Club of NIT Trichy</span>.
             </p>
             
             <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-justify">

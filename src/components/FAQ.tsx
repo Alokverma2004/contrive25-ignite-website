@@ -7,28 +7,40 @@ import {
 
 const faqs = [
   {
-    question: "What is CONTRIVE'25?",
-    answer: "CONTRIVE'25 is SCIEnT's flagship annual innovation initiative at NIT Trichy, designed to empower students to transform their innovative ideas into impactful solutions. It provides a comprehensive platform with mentorship, resources, and recognition.",
+    question: "What is Contrive?",
+    answer: "Contrive is the flagship product development mentorship program of NIT Trichy. It is designed to help students gain hands-on experience in developing real-world engineering solutions through structured mentorship, technical training, and guided project execution.",
   },
   {
     question: "Who can participate?",
-    answer: "All NIT Trichy students from any discipline and year are welcome to participate. Whether you're an engineer, designer, manager, or creative thinker, CONTRIVE'25 welcomes all innovators.",
+    answer: "Contrive is open to all undergraduate students from any engineering discipline who are eager to innovate and explore the process of product development.",
   },
   {
-    question: "How can I register?",
-    answer: "Registration will open soon! Click the 'Register Now' button on this page and fill out the application form with your team details and innovative idea.",
+    question: "What is the duration of the program?",
+    answer: "Contrive runs for approximately two months — from the last week of November to the third week of January. The schedule includes mentorship sessions, design reviews, and final presentations spread across this period.",
   },
   {
-    question: "What type of ideas are encouraged?",
-    answer: "We encourage ideas across all domains - technology, social impact, sustainability, healthcare, education, and more. The key is innovation, feasibility, and potential for real-world impact.",
+    question: "Is there any registration or participation fee?",
+    answer: "No. Contrive is completely free of cost. The entire program, including mentorship and access to all sessions, is provided without any participation fee.",
   },
   {
-    question: "Are there any registration fees?",
-    answer: "No! Participation in CONTRIVE'25 is completely free. We believe in making innovation accessible to everyone.",
+    question: "Who will be the mentors?",
+    answer: "Mentorship will be provided by expert members from the third year of Designers' Consortium, NIT Trichy's Technical Product Design and Innovation club. These mentors bring valuable technical expertise and experience from prior industry-oriented projects, ensuring participants receive practical and high-quality guidance throughout the program.",
   },
   {
-    question: "What is the prize structure?",
-    answer: "Winners receive attractive cash prizes, certificates, trophies, and exclusive CONTRIVE merchandise. Top teams also have opportunities for Pre-Placement Interviews (PPIs) with partner companies. Detailed prize structure will be announced soon.",
+    question: "What are the benefits of participating?",
+    answer: "Participants gain exposure to real-world product development, mentorship from trained experts, and the opportunity to enhance both technical and creative skills. Top-performing teams will also receive cash prizes, certificates, and pre-placement interview (PPI) opportunities.",
+  },
+  {
+    question: "What is IP support and how does it work?",
+    answer: "Projects with patentable potential will receive intellectual property (IP) assistance, including guidance on documentation, filing, and protecting innovative ideas under institutional or national frameworks.",
+  },
+  {
+    question: "What kind of recognition will participants receive?",
+    answer: "Participants will earn certificates, exclusive Contrive 2025 merchandise, and the opportunity to present their projects to industry professionals and NIT Trichy's innovation ecosystem. Exceptional projects will receive special recognition and may be considered for industrial collaboration or implementation.",
+  },
+  {
+    question: "How do I register?",
+    answer: "Registration details and deadlines will be shared through the official Contrive website. Participants can register individually or as a team through the website.",
   },
 ];
 
@@ -41,7 +53,7 @@ const FAQ = () => {
         <div className="absolute w-80 h-80 bg-accent/10 rounded-full blur-3xl bottom-20 right-20 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto relative z-10 max-w-4xl">
+      <div className="px-4 md:px-8 lg:px-12 relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold gradient-gold mb-4">
             Frequently Asked Questions

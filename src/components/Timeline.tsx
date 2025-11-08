@@ -66,7 +66,7 @@ const Timeline = () => {
         <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl bottom-20 right-20 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="px-4 md:px-8 lg:px-12 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-gold text-center animate-slide-up">
           Timeline
         </h2>
@@ -74,7 +74,7 @@ const Timeline = () => {
           From idea to innovation — track your progress through each phase
         </p>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           {/* Curvy center timeline line - using SVG for smooth curves */}
           <svg 
             className="absolute left-1/2 top-0 h-full w-full -translate-x-1/2 pointer-events-none hidden md:block" 
@@ -115,20 +115,15 @@ const Timeline = () => {
                   } flex-col`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Content card - takes half width on desktop */}
+                   {/* Content card - takes half width on desktop */}
                   <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12' : 'md:pl-12'} mb-8 md:mb-0`}>
                     <div className="gradient-card rounded-2xl p-6 md:p-8 border-2 border-accent/30 hover:border-accent/60 transition-all duration-300 hover:glow-card hover:scale-105 shadow-card group">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 border-2 border-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                          <Icon className="w-6 h-6 text-accent" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl md:text-2xl font-bold text-accent mb-2">
-                            {stage.title}
-                          </h3>
-                          <div className="inline-flex px-4 py-1.5 rounded-full bg-accent/20 border border-accent/40 mb-3">
-                            <span className="text-sm font-black text-accent">{stage.date}</span>
-                          </div>
+                      <div className="mb-4">
+                        <h3 className="text-xl md:text-2xl font-bold text-accent mb-3">
+                          {stage.title}
+                        </h3>
+                        <div className="inline-flex px-4 py-1.5 rounded-full bg-accent/20 border border-accent/40 mb-3">
+                          <span className="text-sm font-black text-accent">{stage.date}</span>
                         </div>
                       </div>
                       <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
@@ -137,9 +132,9 @@ const Timeline = () => {
                     </div>
                   </div>
 
-                  {/* Center icon/connector */}
+                  {/* Center icon/connector - joined with line */}
                   <div className="absolute left-1/2 -translate-x-1/2 z-20">
-                    <div className="w-6 h-6 rounded-full bg-accent border-4 border-background shadow-[0_0_20px_hsl(var(--accent)/0.6)] animate-pulse-glow"></div>
+                    <div className="w-5 h-5 rounded-full bg-accent border-2 border-background shadow-[0_0_20px_hsl(var(--accent)/0.6)]"></div>
                   </div>
 
                   {/* Empty space for alternating layout */}
