@@ -98,8 +98,8 @@ const Timeline = () => {
             />
           </svg>
 
-          {/* Mobile vertical line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full md:hidden -translate-x-1/2"></div>
+          {/* Vertical line connecting all dots */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full -translate-x-1/2"></div>
 
           {/* Timeline stages - alternating left and right */}
           <div className="space-y-12 md:space-y-16">
@@ -132,13 +132,9 @@ const Timeline = () => {
                     </div>
                   </div>
 
-                  {/* Center dot with horizontal line to card */}
-                  <div className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center">
-                    {/* Horizontal line from dot to card */}
-                    <div className={`hidden md:block absolute h-0.5 bg-gradient-to-${isLeft ? 'r' : 'l'} from-accent/60 to-transparent ${isLeft ? 'left-full' : 'right-full'}`} 
-                         style={{ width: 'calc(50vw - 50% - 2.5rem)' }}></div>
-                    {/* Center dot */}
-                    <div className="w-5 h-5 rounded-full bg-accent border-2 border-background shadow-[0_0_20px_hsl(var(--accent)/0.6)] relative z-10"></div>
+                  {/* Center dot */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-20">
+                    <div className="w-5 h-5 rounded-full bg-accent border-2 border-background shadow-[0_0_20px_hsl(var(--accent)/0.6)]"></div>
                   </div>
 
                   {/* Empty space for alternating layout */}
