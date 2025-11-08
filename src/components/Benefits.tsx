@@ -1,4 +1,4 @@
-import { Brain, Briefcase, Trophy, Gift, Star, Shield, Building2 } from "lucide-react";
+import { Brain, Briefcase, Trophy, Gift, Shield, Building2 } from "lucide-react";
 
 const benefits = [
   {
@@ -9,7 +9,7 @@ const benefits = [
   {
     icon: Building2,
     title: "Opportunity to be Industrial Innovators",
-    description: "Contrive provides participants with the unique opportunity to work on industrially relevant problem statements. Exceptional teams stand a chance to become the inventors of projects that can be implemented in collaboration with industry partners.",
+    description: "Contrive provides participants with the unique opportunity to work on industrially relevant problem statements.",
   },
   {
     icon: Briefcase,
@@ -24,17 +24,12 @@ const benefits = [
   {
     icon: Shield,
     title: "Intellectual Property (IP) Support",
-    description: "To encourage innovation and ownership, participants will receive complete intellectual property support. Teams with patentable ideas will be guided through the IP process.",
+    description: "To encourage innovation and ownership, participants will receive complete intellectual property support.",
   },
   {
     icon: Gift,
     title: "Exclusive Merchandise",
     description: "Every participant will receive limited-edition Contrive 2025 merchandise as a token of participation and innovation.",
-  },
-  {
-    icon: Star,
-    title: "Exposure and Recognition",
-    description: "Participants will have the opportunity to present their projects to industry experts, faculty evaluators, and members of the NIT Trichy innovation ecosystem.",
   },
 ];
 
